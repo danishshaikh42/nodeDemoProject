@@ -71,7 +71,7 @@ stages:
             inputs:
               buildType: 'current'
             
-          - task: AzureWebApp@1
+          - task: PublishBuildArtifacts@1
             displayName: 'Azure Web App Deploy: danishnewproject'
             inputs:
               azureSubscription: $(azureSubscription)
