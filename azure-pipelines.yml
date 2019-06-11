@@ -72,6 +72,7 @@ stages:
               buildType: 'current'
             
           - task: AzureWebApp@1
+          - task: PublishBuildArtifacts@1
             displayName: 'Azure Web App Deploy: danishnewproject'
             inputs:
               azureSubscription: $(azureSubscription)
@@ -80,5 +81,4 @@ stages:
               runtimeStack: 'NODE|10.10'
               package: $(System.ArtifactsDirectory)/drop/$(Build.BuildId).zip
               startUpCommand: 'npm run start'
-               - task: PublishBuildArtifacts@1
              
